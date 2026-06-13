@@ -24,8 +24,6 @@ rm -rf "${tmpdir}"
 mkdir -p $tmpdir
 tar -cvf $tmpdir/$tarfile --exclude="${tmpdir}" --exclude="output.hpss" --exclude=".git" *
 hsi put $tmpdir/$tarfile : $dst/$tarfile
-htar -Xf $tmpdir/$tarfile
-hsi put $tmpdir/${tarfile}.idx : $dst/${tarfile}.idx
 
 set +x
 endtime=$(date -u +"%Y%m%d_%H%M%S")
