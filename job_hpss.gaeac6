@@ -3,7 +3,7 @@
 #SBATCH --time=6:30:00
 #SBATCH --account=arfs-gsl
 #SBATCH --partition=dtn_f5_f6
-#SBATCH --job-name=extra_meshes
+#SBATCH --job-name=FIX_MESHES
 #SBATCH --chdir=.
 #SBATCH -e output.hpss
 #SBATCH -o output.hpss
@@ -12,7 +12,7 @@ module use /usw/hpss/modulefiles
 module load hsi
 
 set -x
-dst="/ESRL/BMC/wrfruc/5year/guoqing/extra_meshes"
+dst="/ESRL/BMC/wrfruc/5year/guoqing/FIX_MESHES"
 timestamp=$(date -u +"%Y%m%d_%H%M%S")
 startime=$timestamp
 
