@@ -1,0 +1,77 @@
+&nhyd_model
+    config_init_case = 7
+    config_start_time = '2025-07-27_00:00:00'
+    config_stop_time = '2025-07-27_00:00:00'
+    config_theta_adv_order = 3
+    config_coef_3rd_order = 0.25
+    config_interface_projection = 'linear_interpolation'
+/
+&dimensions
+    config_nvertlevels = 79
+    config_nsoillevels = 4
+    config_nfglevels = 34
+    config_nfgsoillevels = 4
+    config_gocartlevels = 30
+    config_nsoilcat = 16
+    config_nvegopt = 1
+/
+&data_sources
+    config_geog_data_path = '/gpfs/f6/arfs-gsl/scratch/Clark.Evans/mpas_static/'
+    config_met_prefix = '/gpfs/f6/arfs-gsl/scratch/Clark.Evans/WPS/GFS'
+    config_sfc_prefix = '/gpfs/f6/arfs-gsl/scratch/Clark.Evans/WPS/GFS'
+    config_fg_interval = 21600
+    config_landuse_data = 'MODIFIED_IGBP_MODIS_NOAH_15s'
+    config_soilcat_data = 'BNU'
+    config_topo_data = 'GMTED2010'
+    config_vegfrac_data = 'MODIS'
+    config_albedo_data = 'MODIS'
+    config_maxsnowalbedo_data = 'MODIS'
+    config_supersample_factor = 3
+    config_lu_supersample_factor = 1
+    config_30s_supersample_factor = 1
+    config_use_spechumd = false
+    config_lai_data = 'MODIS'
+/
+&vertical_grid
+    config_ztop = 38000.0
+    config_nsmterrain = 1
+    config_smooth_surfaces = true
+    config_dzmin = 0.3
+    config_nsm = 30
+    config_tc_vertical_grid = true
+    config_blend_bdy_terrain = false
+    config_specified_zeta_levels = '/gpfs/f6/arfs-gsl/scratch/Clark.Evans/MPAS-Meshes/L80_hfip.txt'
+/
+&interpolation_control
+    config_extrap_airtemp = 'lapse-rate'
+/
+&preproc_stages
+    config_static_interp = false
+    config_native_gwd_static = false
+    config_native_gwd_gsl_static = false
+    config_vertical_grid = true
+    config_met_interp = true
+    config_tempo_rap = false
+    config_input_sst = false
+    config_frac_seaice = true
+/
+&lbcs
+    config_lbc_hydrometeors_rrfs = true
+    config_lbc_hydrometeors_gfs = false
+/
+&io
+    config_pio_num_iotasks = 0
+    config_pio_stride = 1
+/
+&decomposition
+    config_block_decomp_file_prefix = '/gpfs/f6/arfs-gsl/scratch/Clark.Evans/MPAS-Meshes/x1.41943042.graph.info.part.'
+/
+&chemistry
+    num_chem = 0
+    kanthro = 1
+    kwildfire = 1
+    kbiogenic = 1
+    kvolcanic = 1
+    hwp_method = 1
+    ebb_dcycle = 0
+/

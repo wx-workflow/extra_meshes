@@ -1,0 +1,121 @@
+&nhyd_model
+    config_time_integration_order = 2
+    config_dt = 20.0
+    config_start_time = '2025-07-27_00:00:00'
+    config_run_duration = '5_00:00:00'
+    config_split_dynamics_transport = true
+    config_number_of_sub_steps = 6
+    config_dynamics_split_steps = 3
+    config_horiz_mixing = '2d_smagorinsky'
+    config_visc4_2dsmag = 0.05
+    config_scalar_eddy_mix = false
+    config_scalar_advection = true
+    config_monotonic = true
+    config_coef_3rd_order = 0.25
+    config_epssm = 0.1
+    config_smdiv = 0.1
+/
+&damping
+    config_zd = 32000.0
+    config_xnutr = 0.2
+    config_mpas_cam_coef = 2.0
+    config_number_cam_damping_levels = 8
+    config_rayleigh_damp_u = true
+    config_rayleigh_damp_u_timescale_days = 2.5
+/
+&limited_area
+    config_apply_lbcs = false
+    config_lbc_w = 'zero'
+/
+&io
+    config_pio_num_iotasks = 160
+    config_pio_stride = 192
+/
+&decomposition
+    config_block_decomp_file_prefix = '/gpfs/f6/arfs-gsl/scratch/Clark.Evans/MPAS-Meshes/x1.41943042.graph.info.part.'
+/
+&restart
+    config_do_restart = false
+/
+&printout
+    config_print_global_minmax_vel = true
+    config_print_detailed_minmax_vel = false
+/
+&IAU
+    config_IAU_option = 'off'
+    config_IAU_window_length_s = 21600.
+/
+&physics
+    config_sst_update = false
+    config_gvf_update = true
+    config_sstdiurn_update = false
+    config_deepsoiltemp_update = false
+    config_radtlw_interval = '00:03:00'
+    config_radtsw_interval = '00:03:00'
+    config_bucket_update = 'none'
+    config_physics_suite = 'hrrrv5'
+    config_gwdo_scheme = 'bl_ugwp_gwdo'
+    config_lsm_scheme = 'sf_noah'
+    num_soil_layers = 4
+/
+&soundings
+    config_sounding_interval = 'none'
+/
+&physics_lsm_noahmp
+    config_noahmp_iopt_dveg = 4
+    config_noahmp_iopt_crs = 1
+    config_noahmp_iopt_btr = 1
+    config_noahmp_iopt_runsrf = 3
+    config_noahmp_iopt_runsub = 3
+    config_noahmp_iopt_sfc = 1
+    config_noahmp_iopt_frz = 1
+    config_noahmp_iopt_inf = 1
+    config_noahmp_iopt_rad = 3
+    config_noahmp_iopt_alb = 1
+    config_noahmp_iopt_snf = 1
+    config_noahmp_iopt_tksno = 1
+    config_noahmp_iopt_tbot = 2
+    config_noahmp_iopt_stc = 1
+    config_noahmp_iopt_gla = 1
+    config_noahmp_iopt_rsf = 4
+    config_noahmp_iopt_soil = 1
+    config_noahmp_iopt_pedo = 1
+    config_noahmp_iopt_crop = 0
+    config_noahmp_iopt_irr = 0
+    config_noahmp_iopt_irrm = 0
+    config_noahmp_iopt_infdv = 1
+    config_noahmp_iopt_tdrn = 0
+/
+&physics_mp_tempo
+    config_tempo_aerosolaware = true
+    config_tempo_hailaware = true
+    config_tempo_ml_for_bl_nc = true
+/
+&chemistry
+    rwc_emis_scale_factor = 1.0
+    num_chem = 0
+    kanthro = 1
+    kwildfire = 1
+    kbiogenic = 1
+    kvolcanic = 1
+    kreswoodcomb = 1
+    hwp_method = 1
+    hwp_alpha = 1.0
+    bb_input_prevh = 24
+    bb_beta = 1
+    wetdep_ls_opt = 0
+    wetdep_ls_alpha = 0.0
+    plumerise_opt = 0
+    plume_wind_eff = 0
+    plume_alpha = 0.0
+    bb_qv_scale_factor = 1.0
+    ebb_dcycle = 0
+    calc_bb_emis_online = false
+    bb_emis_scale_factor = 1.0
+    drydep_opt = 0
+    pm_settling = 0
+    dust_alpha = 1.0
+    dust_gamma = 1.0
+    dust_moist_correction = 1.0
+    dust_drylimit_factor = 1.0
+/
