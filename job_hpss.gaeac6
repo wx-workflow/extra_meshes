@@ -21,9 +21,11 @@ tarfile=meshes_${timestamp}z.tar
 
 rm -rf "${tmpdir}"
 
-mkdir -p $tmpdir
-tar -cvf $tmpdir/$tarfile --exclude="${tmpdir}" --exclude="output.hpss" --exclude=".git" *
-hsi put $tmpdir/$tarfile : $dst/$tarfile
+#mkdir -p $tmpdir
+#tar -cvf $tmpdir/$tarfile --exclude="${tmpdir}" --exclude="output.hpss" --exclude=".git" --exclude="global-15-3km.invariant.nc_L125_GFS" *
+#hsi put $tmpdir/$tarfile : $dst/$tarfile
+htar -cvf $dst/$tarfile ar3.5km ea5km eu12km fwx1.25km global10km global12km global15km job_hpss.gaeac6 misc README.md \
+  global-15-3km/{global-15-3km.grid.nc,global-15-3km.static.nc,global-15-3km.ugwp_oro_data.nc,graphinfo,misc}
 
 set +x
 endtime=$(date -u +"%Y%m%d_%H%M%S")
